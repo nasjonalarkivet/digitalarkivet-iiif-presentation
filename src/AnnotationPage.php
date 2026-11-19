@@ -133,6 +133,6 @@ class AnnotationPage extends Resource
 			$array['items'] = $items;
 		}
 
-		return [...parent::toArray(), ... $array];
+		return [...parent::toArray(), ...$array];
 	}
 }

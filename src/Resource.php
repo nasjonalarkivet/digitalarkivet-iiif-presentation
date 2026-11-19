@@ -13,9 +13,9 @@ use ReflectionClass;
 abstract class Resource implements JsonSerializable
 {
 	/**
-	 * IIIF Presentation API 3 context.
+	 * IIIF Presentation API 4 context.
 	 */
-	public const string CONTEXT = 'http://iiif.io/api/presentation/3/context.json';
+	public const string CONTEXT = 'http://iiif.io/api/presentation/4/context.json';
 
 	/**
 	 * Is this a top-level resource?

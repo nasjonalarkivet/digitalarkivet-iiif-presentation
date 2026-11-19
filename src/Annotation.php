@@ -144,6 +144,6 @@ class Annotation extends Resource
 			$array['body'] = $this->body->toArray();
 		}
 
-		return [...parent::toArray(), ... $array];
+		return [...parent::toArray(), ...$array];
 	}
 }
