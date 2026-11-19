@@ -50,7 +50,7 @@ class Manifest extends Resource
 	/**
 	 * Items.
 	 *
-	 * @var Canvas[]
+	 * @var (Canvas|Timeline)[]
 	 */
 	protected $items = [];
 
@@ -69,9 +69,9 @@ class Manifest extends Resource
 	/**
 	 * Add item.
 	 */
-	public function addItem(Canvas $canvas): void
+	public function addItem(Canvas|Timeline $item): void
 	{
-		$this->items[] = $canvas;
+		$this->items[] = $item;
 	}
 
 	/**
@@ -177,6 +177,6 @@ class Manifest extends Resource
 			$array['annotations'] = $annotations;
 		}
 
-		return [...parent::toArray(), ... $array];
+		return [...parent::toArray(), ...$array];
 	}
 }
