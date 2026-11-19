@@ -50,7 +50,7 @@ class Annotation extends Resource
 	 */
 	public function __construct(
 		protected string $id,
-		protected string $target,
+		protected Target $target,
 		protected Motivation $motivation = Motivation::PAINTING,
 		bool $isTopLevel = true,
 	) {
@@ -80,7 +80,7 @@ class Annotation extends Resource
 	{
 		$array = [
 			'id' => $this->id,
-			'target' => $this->target,
+			'target' => $this->target->toArray(),
 			'motivation' => [$this->motivation->value],
 		];
 
