@@ -6,6 +6,7 @@ namespace digitalarkivet\iiif\presentation\content;
 
 use digitalarkivet\iiif\presentation\properties\linking\ServiceCollection;
 use digitalarkivet\iiif\presentation\traits\WithDimensionsTrait;
+use digitalarkivet\iiif\presentation\traits\WithFileSizeTrait;
 use digitalarkivet\iiif\presentation\traits\WithFormatTrait;
 use digitalarkivet\iiif\presentation\traits\WithRotationTrait;
 use digitalarkivet\iiif\presentation\traits\WithServiceTrait;
@@ -16,6 +17,7 @@ use digitalarkivet\iiif\presentation\traits\WithServiceTrait;
 class ImageResource extends ContentResource
 {
 	use WithDimensionsTrait { setHeight as protected; setWidth as protected; }
+	use WithFileSizeTrait { setFileSize as protected; }
 	use WithFormatTrait { setFormat as protected; }
 	use WithRotationTrait { setRotation as protected; }
 	use WithServiceTrait { setService as protected; }
@@ -29,12 +31,14 @@ class ImageResource extends ContentResource
 		?int $height = null,
 		?int $width = null,
 		?int $rotation = null,
+		?int $fileSize = null,
 		?ServiceCollection $service = null,
 	) {
 		$this->format = $format;
 		$this->height = $height;
 		$this->width = $width;
 		$this->rotation = $rotation;
+		$this->fileSize = $fileSize;
 		$this->service = $service;
 	}
 
@@ -74,6 +78,10 @@ class ImageResource extends ContentResource
 
 		if ($this->rotation) {
 			$array['rotation'] = $this->rotation;
+		}
+
+		if ($this->fileSize) {
+			$array['fileSize'] = $this->fileSize;
 		}
 
 		if ($this->service) {

@@ -9,6 +9,7 @@ namespace digitalarkivet\iiif\presentation\content;
  */
 enum ResourceType: string
 {
+	case AUDIO = 'Audio';
 	case DATASET = 'Dataset';
 	case IMAGE = 'Image';
 	case MODEL = 'Model';
