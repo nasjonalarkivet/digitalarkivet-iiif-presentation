@@ -81,7 +81,7 @@ class Annotation extends Resource
 		$array = [
 			'id' => $this->id,
 			'target' => $this->target,
-			'motivation' => $this->motivation->value,
+			'motivation' => [$this->motivation->value],
 		];
 
 		if ($this->label) {
